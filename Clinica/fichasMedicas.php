@@ -3,17 +3,21 @@ session_start();
   if(!$_SESSION['verificar']){
     header("Location: modal_login.php");
   }
-    $id=$_SESSION['idPacientex']; 
+    $id=$_POST['idPaciente'];
   ?>
  <?php require 'partials/header2.php' 
  ?>
  <div class="panel panel-primary">
     <div class="panel-heading">
-        <table align="center"><tr><td align="center"><h2>Fichas medicas Paciente: <br> <?php echo $_SESSION['nombrePaciente']; ?> &nbsp; <?php echo $_SESSION['apellidoPaciente']; ?></h2></td></tr>
+        <table align="center"><tr><td align="center"><h2>Fichas medicas Paciente: <br> <?php echo $_POST['nombrePaciente']; ?> &nbsp; <?php echo $_SESSION['apellidoPaciente']; ?></h2></td></tr>
         </table>
          <div class="table-responsive">
     <div align="right">
- <a href="agregarFichaVista.php" class="btn btn-warning">Agregar</a>
+      <form action=agregarFichaVista.php class=form-horizontal method=POST>
+ <input type="submit" class="btn btn-warning" value="Agregar">
+             <input type="hidden" class=form-control name=idPaciente value=<?php echo $_POST['idPaciente']; ?>>
+
+</form>
     </div>
     <br />
    </div>  

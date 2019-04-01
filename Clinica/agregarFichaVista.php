@@ -37,8 +37,10 @@ session_start();
 
    <br /></td>
     </tr>   
-    <tr><td colspan="3"><input type="submit" name="Insertar" id="insert" value="Insertar" class="btn btn-success" />
-     <input type=hidden class=form-control name=idPaciente id="idPaciente" value="<?php echo $_SESSION['idPaciente']; ?>"></td></tr>                   
+    <tr><td colspan="3">
+      <input type="hidden" class=form-control name="idPaciente" value="<?php echo $_POST['idPaciente']; ?>">
+      <input type="submit" name="Insertar" id="insert" value="Insertar" class="btn btn-success" />
+     </td></tr>                   
 </table>
 </form>
 <?php

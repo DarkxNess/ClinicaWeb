@@ -9,7 +9,7 @@ session_start();
  ?>
  <div class="panel panel-primary">
     <div class="panel-heading">
-        <table align="center"><tr><td><h2>Lista de Pacientes   <input type="text" value="" name="rutxxx" id="rutxxx" class="form-control"/></h2></td></tr>
+        <table align="center"><tr><td><h2>Lista de Pacientes</h2></td></tr>
         </table>
          <div class="table-responsive">
     <div align="right">
@@ -42,26 +42,36 @@ session_start();
             <td>".$fila['apellidoPaciente']."</td>
             <td>".$fila['rutPaciente']."</td>
 <td align=center>
-            <form action=pacientes.php class=form-horizontal method=POST>
-            <input type=hidden class=form-control name=idPaciente id=idPaciente value=".$fila['idPaciente'].">
-     <input type=button value=Actualizar name=age id=actualizacion class=btn btn-warning>
+            <form action=editarPacienteVista.php class=form-horizontal method=POST>
+            <input type=hidden class=form-control name=idPacientex id=idPacientex value=".$fila['idPaciente'].">
+                        <input type=hidden class=form-control name=nombrePaciente  value=".$fila['nombrePaciente'].">
+                                    <input type=hidden class=form-control name=rutPaciente  value=".$fila['rutPaciente'].">
+        <input type=hidden class=form-control name=apellidoPaciente  value=".$fila['apellidoPaciente'].">
+            <input type=hidden class=form-control name=emailPaciente value=".$fila['emailPaciente'].">
+            <input type=hidden class=form-control name=direccionPaciente value=".$fila['direccionPaciente'].">
+            <input type=hidden class=form-control name=ciudadPaciente  value=".$fila['ciudadPaciente'].">
+            <input type=hidden class=form-control name=telefonoPaciente value=".$fila['telefonoPaciente'].">
+
+
+     <input type=submit value=Actualizar name=age id=actualizacion class=btn btn-warning>
 </form>
 </td>
-            <td align=center><form action=pacientes.php class=form-horizontal method=POST><input type=hidden class=form-control name=idPacientex id=idPacientex value=".$fila['idPaciente'].">
+            <td align=center><form action=fichasMedicas.php class=form-horizontal method=POST><input type=hidden class=form-control name=idPaciente id=idPaciente value=".$fila['idPaciente'].">
+            <input type=hidden class=form-control name=nombrePaciente id=nombrePaciente value=".$fila['nombrePaciente'].">
             
             <input type=submit value=Ficha class=btn btn-default></form></td>
           </tr>";
         }
       ?> 
       <?php
-        if(isset($_POST['idPacientex'])){
+        if(isset($_POST['idPaciente'])){
             require_once "connect.php";
-            require_once "fichasMedicasControlador.php";
+            require_once "fichasMedicas.php";
         }
 
-                     if(isset($_POST['idPaciente'])){
+                     if(isset($_POST['idPacientex'])){
           require_once "connect.php";
-          require_once "editarPacienteControlador.php";
+          require_once "editarPacienteVista.php";
 
             
 

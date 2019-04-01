@@ -83,7 +83,11 @@ session_start();
         $consulta1=$mysqli->query($query);
         while($fila=$consulta1->fetch_array(MYSQLI_ASSOC)){
           echo "<tr>
-            <td><button class=enlace>".$fila['tituloNoticia']." </button>
+          <form action=verNoticia.php class=form-horizontal method=POST>
+            <td><button type=submit class=enlace>".$fila['tituloNoticia']." </button>
+             
+            <input type=hidden class=form-control name=idNoticias id=idNoticias value=".$fila['idNoticias'].">
+</form>
            </td>
           </tr>";
         }
@@ -91,7 +95,7 @@ session_start();
       <?php
         if(isset($_POST['idNoticias'])){
             require_once "connect.php";
-            require_once "editarNoticiaControlador.php";
+            require_once "verNoticia.php";
         }
 
                      if(isset($_POST['idNoticiasx'])){
