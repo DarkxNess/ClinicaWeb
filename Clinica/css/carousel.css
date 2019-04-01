@@ -1,0 +1,13 @@
+.carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
+        display: block;
+        height: 150px;
+        min-width: 100%;
+        width: 100%;
+        max-width: 100%;
+        line-height: 1;
+    }
+
+    body {
+  margin: 0;
+    padding-top:55px;
+}
