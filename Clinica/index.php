@@ -58,6 +58,8 @@ session_start();
   <div class="right">
     <h2>Acerca de nosotros</h2>
     <p>Clinica especializada en dermatología y reutomatología, fundada el año 2018 por Mauricio Quezada.</p>
+        <p><a href="/clinica/verDoctores.php"> Personal Medico.</a></p>
+
   </div>
 </div>
 
