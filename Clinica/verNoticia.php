@@ -9,10 +9,21 @@ session_start();
  ?>
 
 
-  
+   <div class="container-fluid">
+<table class="table">
+    <thead class="thead-light">
+      <tr align="center">
+        <th>
+    <!--box header-->
+       
+  </th>
+</tr>
+</thead>
+    <tbody>
 
-    <table class="table-bordered" width="60%" align="center">
-    <p><?php
+
+
+   <?php
         require_once "connect.php";
         $query="SELECT * FROM noticias where idNoticias='$id'";
         $consulta1=$mysqli->query($query);
@@ -31,6 +42,7 @@ session_start();
           
         }
       ?> 
+</tbody>
   <table>
-    
+   </div> 
    <?php require 'partials/footer.php' ?>

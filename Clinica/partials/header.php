@@ -9,9 +9,12 @@
   <link rel="stylesheet" href="css/MyStyles.css">
   <style>
     body {
+      width:100%;
+      height:100%;
       background: url("fondo.jpg") no-repeat fixed center;
         background-repeat: no-repeat;
   background-attachment: fixed;
+ 
     }
 
   </style>

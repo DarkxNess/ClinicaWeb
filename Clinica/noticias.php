@@ -1,29 +1,30 @@
- <?php
+<?php
 session_start();
-  if($_SESSION['privilegio']!="admin"){
-   echo "<script>
-                alert('Solo para administradores');
-                window.location= 'index.php'
-    </script>";
-  }
   ?>
    <?php require 'partials/header2.php' ?>
-    <div class="panel-heading">
-        <table align="center"><tr><td><h2>Lista de Noticias</h2></td></tr>
-        </table>
-         <div class="table-responsive">
+
+     <div class="container-fluid">
+
+  <table class="table">
+    <thead class="thead-light">
+      <tr align="center">
+        <th><h2>Lista de Noticias</h2></th></tr>
+      </thead>
+        <tbody>
+<tr><td>
+         
     <div align="right">
      <a href="agregarNoticiaVista.php" class="btn btn-warning">Agregar</a>
     </div>
-    <br />
-   </div>  
-    </div>
+
+
+</td></tr></tbody></table>
     <div class="table-responsive ">
        <table  id="grid" class="table table-bordered">
     <thead>
       <tr>
         <th>#</th>
-        <th>Titulo</th>
+        <th>Título</th>
         <th>Fecha</th>
         <th>Actualizar</th>
         <th>Eliminar</th>
@@ -32,7 +33,7 @@ session_start();
     <tbody>
 <?php
         require_once "connect.php";
-        $query="SELECT * FROM noticias";
+        $query="SELECT * FROM noticias ORDER BY idNoticias ASC";
         $consulta1=$mysqli->query($query);
         while($fila=$consulta1->fetch_array(MYSQLI_ASSOC)){
           echo "<tr>
@@ -42,13 +43,13 @@ session_start();
   <td align=center>
             <form action=editarNoticiaVista.php class=form-horizontal method=POST>
             <input type=hidden class=form-control name=idNoticias id=idNoticias value=".$fila['idNoticias'].">
-                        <input type=hidden class=form-control name=tituloNoticia  value=".$fila['tituloNoticia'].">
-            <input type=hidden class=form-control name=cuerpoNoticia value=".$fila['cuerpoNoticia'].">
-
+             <textarea hidden=true name=cuerpoNoticia>".$fila['cuerpoNoticia']."</textarea>
+             <textarea hidden=true name=tituloNoticia>".$fila['tituloNoticia']."</textarea>           
      <input type=submit value=Actualizar name=age class=btn btn-warning>
 </form>
 </td>
-            <td align=center><form action=noticias.php class=form-horizontal method=POST><input type=hidden class=form-control name=idNoticiasx id=idNoticiasx value=".$fila['idNoticias'].">
+            <td align=center><form action=noticias.php class=form-horizontal method=POST>
+            <input type=hidden class=form-control name=idNoticiasx id=idNoticiasx value=".$fila['idNoticias'].">
             
             <input type=submit value=Eliminar class=btn btn-default></form></td>
           </tr>";
@@ -158,4 +159,6 @@ session_start();
 </div>
     </div>
   </div>
+
+
  <?php require 'partials/footer.php' ?>

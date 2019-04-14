@@ -6,7 +6,6 @@
     $examenes = $_POST['examenes'];  
     $antecedentes = $_POST['antecedentes'];
     $comentarios = $_POST['comentarios'];
-
          $query="UPDATE ficha_medica SET diagnostico='$diagnostico', tratamiento1='$tratamiento1',tratamiento2='$tratamiento2',examenes='$examenes',antecedentes='$antecedentes', comentarios='$comentarios' WHERE idFicha='$idFicha'";
     $consulta1=$mysqli->query($query);
         echo "<script>

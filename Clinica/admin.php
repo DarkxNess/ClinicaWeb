@@ -1,5 +1,8 @@
  <?php
 session_start();
+  if(!$_SESSION['verificar']){
+    header("Location: modal_login.php");
+  }
   if($_SESSION['privilegio']!="admin"){
    echo "<script>
                 alert('Solo para administradores');
@@ -8,18 +11,22 @@ session_start();
   }
   ?>
    <?php require 'partials/header2.php' ?>
-    <div class="panel-heading">
-        <table align="center"><tr><td><h2>Lista de Usuarios</h2></td></tr>
-        </table>
-         <div class="table-responsive">
+
+    <div class="container-fluid">
+<table class="table">
+    <thead class="thead-light">
+      <tr align="center">
+        <th><h2>Lista de Usuarios</h2></th></tr>
+      </thead>
+        <tbody>
+<tr><td>
+       
     <div align="right">
-     <a href="agregarUsuarioVista.php" class="btn btn-warning">Agregar</a>
-    </div>
+  <a href="agregarUsuarioVista.php" class="btn btn-warning">Agregar</a>
     <br />
-   </div>  
-    </div>
+  </td></tr></tbody></table>
     <div class="table-responsive ">
-       <table  id="grid" class="table table-bordered">
+       <table  id="listarUsuarios" class="table table-bordered">
     <thead>
       <tr>
         <th>#</th>
@@ -42,24 +49,20 @@ session_start();
             <td>".$fila['apellidoUsuario']."</td>
             <td>".$fila['emailUsuario']."</td>
   <td align=center>
-            <form action=admin.php class=form-horizontal method=POST>
-            <input type=hidden class=form-control name=idUsuarioModificar value=".$fila['idUsuario'].">
-                        <input type=hidden class=form-control name=idUsuarioModificar value=".$fila['nombreUsuario'].">
-
-            <input type=hidden class=form-control name=apellidoUsuario value=".$fila['apellidoUsuario'].">
-
-            <input type=hidden class=form-control name=emailUsuario value=".$fila['emailUsuario'].">
-
-            <input type=hidden class=form-control name=passUsuario value=".$fila['passUsuario'].">
-
-            <input type=hidden class=form-control name=privilegio value=".$fila['privilegio'].">
-
-            <input type=hidden class=form-control name=especialidad value=".$fila['especialidad'].">
-
+            <form action=editarUsuarioVista.php class=form-horizontal method=POST>
+                        <textarea hidden=true name=idUsuarioModificar>".$fila['idUsuario']."</textarea>
+            <textarea hidden=true name=nombreUsuario>".$fila['nombreUsuario']."</textarea>
+            <textarea hidden=true name=apellidoUsuario>".$fila['apellidoUsuario']."</textarea>
+            <textarea hidden=true name=emailUsuario>".$fila['emailUsuario']."</textarea>
+            <textarea hidden=true name=passUsuario>".$fila['passUsuario']."</textarea>
+            <textarea hidden=true name=privilegio>".$fila['privilegio']."</textarea>
+            <textarea hidden=true name=especialidad>".$fila['especialidad']."</textarea>
      <input type=submit value=Actualizar name=age class=btn btn-warning>
 </form>
 </td>
-            <td align=center><form action=admin.php class=form-horizontal method=POST><input type=hidden class=form-control name=idUsuario value=".$fila['idUsuario'].">
+            <td align=center>
+            <form action=admin.php class=form-horizontal method=POST>
+            <input type=hidden class=form-control name=idUsuario value=".$fila['idUsuario'].">
             
             <input type=submit value=Eliminar class=btn btn-default></form></td>
           </tr>";

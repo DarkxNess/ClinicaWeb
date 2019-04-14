@@ -11,7 +11,9 @@
 </head>
 <body>
 <header>
-  <div class="fixed-top">
+  
+<div class="fixed-top" id="myTopnav">
+
   <ul>
     <li>
       <a  href="index.php">Nexo</a>
@@ -28,7 +30,7 @@ if(!isset($_SESSION['user'])){
 <?php } ?> 
 <?php
 if(isset($_SESSION['user'])){
-if ($_SESSION['privilegio']=="doctor"){
+if ($_SESSION['privilegio']=="doctor" || $_SESSION['privilegio']=="admin"){
 ?>
 <li>
      <a href="pacientes.php">Pacientes</a>
@@ -42,12 +44,21 @@ if ($_SESSION['privilegio']=="admin"){
      <a href="admin.php">Admin</a>
       </li>
 <?php } }?> 
+
+<?php
+if(isset($_SESSION['user'])){
+if ($_SESSION['privilegio']=="doctor" || $_SESSION['privilegio']=="admin"){
+?>
+<li>
+     <a href="noticias.php">Noticias</a>
+      </li>
+<?php } }?> 
 <li style="float:right">
-  <a href="#about"><?php
+  <?php
 if(isset($_SESSION['user'])){
 ?>
-  Bienvenido: <?php echo $_SESSION['user']; ?> &nbsp; <?php echo $_SESSION['apellido']; ?>
-<?php  } ?> </a>
+<a style="color:#e5e5e5;"> Bienvenido: <?php echo $_SESSION['user']; ?> &nbsp; <?php echo $_SESSION['apellido']; ?>  </a>
+<?php  } ?>
 </li>
 <li style="float:right">
  <?php

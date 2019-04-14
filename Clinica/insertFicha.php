@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set("Chile/Continental");
     $diagnostico = $_POST['diagnostico'];  
     $tratamiento1 = $_POST['tratamiento1'];  
     $tratamiento2 = $_POST['tratamiento2'];  

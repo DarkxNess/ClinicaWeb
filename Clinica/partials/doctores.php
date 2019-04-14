@@ -4,8 +4,8 @@
     <div class="contenedor-imagenes">
       <!--Div que controla el comportamiento de las imagenes-->
 <div class="imagen">
-        <img data-target="#modalDoctor" class="circular--square" data-toggle="modal" src="imagenes/doctor.jpg" title="Doctor">
-          <p class="parrafoDoctor">Doctor: <a class="link-biografia" title="Ver información" data-target="#modalDoctor" data-toggle="modal" rel="noopener noreferrer">Doctor Ejemplo</a>
+        <img data-target="#modalDoctor" id="imagen1" class="circular--square" data-toggle="modal" src="imagenes/doctor.jpg" title="Doctor">
+          <p class="parrafoDoctor">Doctor: <a class="link-biografia" title="Ver información" rel="noopener noreferrer">Doctor Ejemplo</a>
       </div>
      <div class="imagen">
         <img data-target="#modalDoctor" class="circular--square" data-toggle="modal" src="imagenes/doctor.jpg" title="Doctor">

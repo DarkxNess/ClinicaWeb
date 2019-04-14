@@ -1,5 +1,8 @@
 <?php
 session_start();
+  if(!$_SESSION['verificar']){
+    header("Location: modal_login.php");
+  }
   if($_SESSION['privilegio']!="admin"){
    echo "<script>
                 alert('Solo para administradores');
@@ -8,13 +11,16 @@ session_start();
   }
   ?>
    <?php require 'partials/header2.php' ?>
-<table class="panel panel-primary" align="center" width="50%">
-    <tr><td>
-    <!--box header-->
-    <div class="panel-heading" align="center">
-        <h3>Agregar Paciente </h3>
-    </div><!--/box header-->
-    <form method="post" action="agregarPacienteVista.php">
+
+    <div class="container-fluid">
+<table class="table">
+    <thead class="thead-light">
+      <tr align="center">
+        <th><h2>Agregar Paciente</h2></th></tr>
+      </thead>
+   <tbody>
+<tr><td align="center">
+ <form method="post" action="agregarPacienteVista.php" class="formularioPersonalizado">
      <label>Nombre</label>
      <input type="text" name="name" id="name" class="form-control" required/>
      <br />
@@ -41,7 +47,7 @@ session_start();
       <input type="hidden" name="doctor" id="doctor" class="form-control" value="<?php echo $_SESSION['id']; ?>"/>
      <br />
      <input type="submit" name="Agregar" value="Insertar" class="btn btn-success" />
-    </form>
+    
      <?php
              if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['apellido']) && isset($_POST['rut']) && isset($_POST['direccion']) && isset($_POST['ciudad']) && isset($_POST['doctor'])){
                 require_once "connect.php";
@@ -49,7 +55,9 @@ session_start();
         }
             ?>
     </td>
-    </tr>                      
+    </tr>   
+    </tbody>                   
 </table>
-
+</form>
+</div>
  <?php require 'partials/footer.php' ?>

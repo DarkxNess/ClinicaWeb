@@ -1,5 +1,8 @@
 <?php
 session_start();
+  if(!$_SESSION['verificar']){
+    header("Location: modal_login.php");
+  }
   if($_SESSION['privilegio']!="admin"){
    echo "<script>
                 alert('Solo para administradores');
@@ -8,12 +11,18 @@ session_start();
   }
   ?>
    <?php require 'partials/header2.php' ?>
-<table class="panel panel-primary" align="center" width="50%">
+
+ <div class="container-fluid">
+<table class="table">
+    <thead class="thead-light">
+      <tr align="center">
+        <th><h2>Agregar Usuario</h2></th></tr>
+      </thead>
+    </table>
+
+
+<table class="table">
     <tr><td>
-    <!--box header-->
-    <div class="panel-heading" align="center">
-        <h3>Agregar Usuario </h3>
-    </div><!--/box header-->
    <form method="post" action="admin.php" align="center">
      <label>Nombre</label>
      <input type="text" name="name" id="name" class="form-control" required/>
@@ -44,5 +53,5 @@ session_start();
     </td>
     </tr>                      
 </table>
-
+</div>
  <?php require 'partials/footer.php' ?>

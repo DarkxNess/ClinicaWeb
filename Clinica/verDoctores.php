@@ -1,5 +1,6 @@
 <?php
 session_start();
+
   if(!$_SESSION['verificar']){
     header("Location: modal_login.php");
   }

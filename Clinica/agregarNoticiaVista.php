@@ -1,5 +1,8 @@
 <?php
 session_start();
+  if(!$_SESSION['verificar']){
+    header("Location: modal_login.php");
+  }
   if($_SESSION['privilegio']!="admin" && $_SESSION['privilegio']!="doctor"){
    echo "<script>
                 alert('Solo para administradores');
@@ -8,21 +11,27 @@ session_start();
   }
   ?>
    <?php require 'partials/header2.php' ?>
-   <br>
-<form method="post" action="agregarNoticiaVista.php" align="center" class="form-horizontal"> 
-<table class="table-bordered" align="center" width="90%"><tr>
-    <td align="center"><h4>Agregar Noticia</h4> <br> </td></tr><tr>
-    <td>
-     <label>Titulo</label>
+
+    <div class="container-fluid">
+<table class="table">
+    <thead class="thead-light">
+      <tr align="center">
+        <th><h2>Agregar Noticia</h2></th></tr>
+      </thead>
+<tbody>
+<tr><td align="center">
+<form method="post" action="agregarNoticiaVista.php" align="center" class="formularioPersonalizado"> 
+
+     <label>Título</label>
       <textarea class="form-control" id="titulo" name="titulo"></textarea>
      <br />
-         </td></tr><tr><td> <label>Cuerpo</label>
+         <label>Cuerpo</label>
      <textarea class="form-control" id="cuerpo" name="cuerpo"></textarea>
-   <br /></td>
-    </tr>   
-    <tr><td><input type="submit" name="Insertar" id="insert" value="Insertar" class="btn btn-success" />
-     <input type=hidden class=form-control name=idPaciente id="idPaciente" value="<?php echo $_SESSION['idPaciente']; ?>"></td></tr>    
-</table>
+   <br />
+   
+   <input type="submit" name="Insertar" id="insert" value="Insertar" class="btn btn-success" />
+     <input type=hidden class=form-control name=idPaciente id="idPaciente" value="<?php echo $_SESSION['user']; ?>">   
+
 </form>
 <?php
         if(isset($_POST['titulo']) && isset($_POST['cuerpo'])){
@@ -30,4 +39,9 @@ session_start();
             require_once "insertNoticia.php";
         }
     ?>
+  </td>
+</tr>
+</tbody>
+    </table>
+</div>
      <?php require 'partials/footer.php' ?>

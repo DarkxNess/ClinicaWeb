@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set("Chile/Continental");
     $idNoticias  = $_POST['idNoticias'];  
     $cuerpoNoticia = $_POST['cuerpo'];  
     $tituloNoticia = $_POST['titulo'];  

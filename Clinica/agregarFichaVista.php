@@ -1,5 +1,8 @@
 <?php
 session_start();
+  if(!$_SESSION['verificar']){
+    header("Location: modal_login.php");
+  }
   if($_SESSION['privilegio']!="admin" && $_SESSION['privilegio']!="doctor"){
    echo "<script>
                 alert('Solo para administradores');
@@ -8,9 +11,19 @@ session_start();
   }
   ?>
    <?php require 'partials/header2.php' ?>
+
+     <div class="container-fluid">
+<table class="table">
+    <thead class="thead-light">
+      <tr align="center">
+        <th><h2>Datos Clinicos</h2></th></tr>
+      </thead>
+</table>
+
+
 <form method="post" action="agregarFichaVista.php" align="center" class="form-horizontal"> 
-<table class="table-bordered" align="center" width="90%"><tr>
-    <td align="center" colspan="5"><h4>Datos Clinicos</h4> </td></tr><tr>
+<table class="table" width="100%"><tr>
+
     <td>
     	<label>Diagnostico</label>
      <input type="text" name="diagnostico" id="diagnostico" class="form-control" required/> 
@@ -22,7 +35,7 @@ session_start();
  </tr>
  <tr><td>
   <label>Examenes</label>
-     <input type="text" name="examenes" id="examenes" class="form-control" required/></td>
+     <input type="text" name="examenes" id="examenes" class="form-control" placeholder="" required/></td>
      <td>
      <label>Tratamiento 2</label>
      <input type="text" name="tratamiento2" id="tratamiento2" class="form-control" required/>
@@ -49,5 +62,5 @@ session_start();
             require_once "insertFicha.php";
         }
     ?>
-
+</div>
      <?php require 'partials/footer.php' ?>
