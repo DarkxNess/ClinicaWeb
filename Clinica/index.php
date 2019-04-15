@@ -3,7 +3,7 @@ session_start();
   ?>
  <?php require 'partials/header2.php' ?>
 
-<header style="background-color:#e5e5e5;padding:15px;text-align:center;">
+<header style="background-color:#e5e5e5;padding:1rem;text-align:center;">
   <h1>Bienvenido a clinicas Nexo</h1>
 </header>
 

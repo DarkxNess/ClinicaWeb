@@ -2,6 +2,7 @@
 
   <div class="carousel-inner">
     <div class="carousel-item active">
+      <h5>Doctor 3 Ejemplo</h5>
              <img width="100%" src="imagenes/doctor.jpg" title="Doctor">
     </div>
   

@@ -22,7 +22,7 @@
   </div>
   <div class="form-group">
     <div >
-      <input type="submit" class="btn btn-default">
+      <input type="submit" value="Enviar" class="btn btn-default">
     </div>
   </div>
 </form>

@@ -12,10 +12,6 @@ h5{
   text-align:center
 }
 
-.carousel{
-  padding-top:35px;
-}
-
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -32,7 +28,7 @@ h5{
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1.1rem;
 }
 
 .topnav a:hover {
@@ -40,15 +36,13 @@ h5{
   color: black;
 }
 
-.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
 .topnav .icon {
   display: none;
 }
 
+.sesionTopBar{
+float:right;
+}
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
@@ -68,11 +62,9 @@ h5{
     display: block;
     text-align: left;
   }
-
-  .carousel{
-    padding-top:35px;
+.sesionTopBar{
+float:left;
 }
-
 }
 
 
@@ -189,16 +181,18 @@ display:none;
   color:#0000cc;
   cursor:pointer;
 }
+
 .footer {
   position: absolute;
-
+  padding-top:-5px;
    left: 0;
-   bottom: 4;
+   bottom: 0;
    width: 100%;
    background-color: #e5e5e5;
    color: blue;
    text-align: center;
 }
+
 body {
   min-height: 100vh;
   position: relative;
@@ -209,7 +203,7 @@ body {
 .contenido-noticias{
   align-content: center;
   align-self: center;
-  font-size: 30px;
+  font-size: 2.2rem;
   font-style: all;
   font-family: "Times New Roman", Times, serif;
   text-align: justify;
@@ -249,10 +243,6 @@ display: none;
 }
 
 
-
-
-
-
 .galeria{
     font-family: 'open sans';
 }
@@ -261,20 +251,6 @@ display: none;
     text-align: center;
     margin:20px 0 15px 0;
     font-weight: 300;
-}
-
-
-.poemas{
-    font-family: 'open sans';
-    text-align: justify;
-    padding: 25px;
-    margin-top:0px !important;
-
-}
-
-.linea{
-    border-top: 5px solid #0077C0;
-    margin-bottom: 40px;
 }
 
 .contenedor-imagenes{
@@ -293,21 +269,7 @@ display: none;
      flex-wrap: wrap;
    
 }
-.contenedor-autor{
-    display:flex;
-    width: 80%;
-        margin: auto;
-    justify-content: space-around;
-      border-radius:3px;
-}
 
-.contenedor-autor .imagen{
-    width: 32%;
-    position: relative;
-   height:50px;
-    margin-bottom:5px;
-   
-}
 .imagen img{
     width: 80%;
     height:80%; 
@@ -315,7 +277,20 @@ display: none;
     margin-right: auto;
     display: block;
 }
-
+.modal {
+     position: fixed;
+     top: 0px;
+overflow-y: auto;
+  background: rgba(0,0,0,0.7);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+    top: -3vh !important;
+  width: 100% !important;
+  height:103vh !important;
+  z-index: 2147483647 !important;
+}
 h5{
 text-align:center;
 }
@@ -324,25 +299,7 @@ h2{
   text-align: center;
 }
 
-@keyframes cambio {
-    0% {margin-left: 0;}
-    20% {margin-left: 0;}
 
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
-
-    50% {margin-left: -200%;}
-    70% {margin-left: -100%;}
-
-    75% {margin-left: -300%;}
-    100% {margin-left: -300%;}
-}
-
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-}
 .textos{
     padding:300px;
     color:#fff;
@@ -354,19 +311,6 @@ h2{
   text-align: justify;
   text-justify: inter-word;
 }
-
-.fotoBiografia{
-width: 60%;
-float: left;  
-padding-right: 5px;
-}
-.modal-header, .footer{
-    background: #34495e;
-    color:#f2f2f2;
-}
-
-
-
 
 .parrafoDoctor{
 text-align: center; color: #000000 !important; font-weight: bold;
@@ -387,19 +331,12 @@ text-align: center; color: #000000 !important; font-weight: bold;
         width: 25%;
             flex-wrap: wrap;
     }
- .contenido-modal{
-        width: 85%;
-    }
-    .contenido-modal-biografia{
-        width: 100%;
-    }
+
 
     .modal{
     top: -2vh !important;
 }
-.fotoBiografia{
-width: 60%;
-}
+
 .texto-justificado{
 font-size: 26px;
 }
@@ -417,20 +354,10 @@ font-size: 26px;
             flex-wrap: wrap;
     }
 
-        .contenido-modal{
-        width: 68%;
-    }
-    .contenido-modal-biografia{
-        width: 100%;
-    }
-
     .modal{
     top: -4vh !important;
 }
 
-.fotoBiografia{
-width: 60%;
-}
 .texto-justificado{
 font-size: 20px;
 }
@@ -447,14 +374,6 @@ font-size: 20px;
         width: 30%;
             flex-wrap: wrap;
     }
-
-        .contenido-modal{
-        width: 60%;
-    }
-    .contenido-modal-biografia{
-        width: 60%;
-    }
-
     .modal{
     top: -4vh !important;
 }
@@ -470,13 +389,6 @@ font-size: 20px;
     .contenedor-imagenes .imagen{
         width: 48%;
             flex-wrap: wrap;
-    }
-
-        .contenido-modal{
-        width: 50%;
-    }
-    .contenido-modal-biografia{
-        width: 63%;
     }
 
     .modal{
@@ -497,13 +409,6 @@ font-size: 20px;
     .contenedor-imagenes .imagen{
         width: 75%;
             flex-wrap: wrap;
-    }
-
-        .contenido-modal{
-        width: 30%;
-    }
-    .contenido-modal-biografia{
-        width: 100%;
     }
 
     .modal{
@@ -538,13 +443,6 @@ font-size: 20px;
         width: 80%;
             flex-wrap: wrap;
     }
-
-        .contenido-modal{
-        width: 100%;
-    }
-    .contenido-modal-biografia{
-        width: 100%;
-    }
 }
 
 @media screen and (max-width:250px){
@@ -559,53 +457,13 @@ font-size: 20px;
         width: 75%;
             flex-wrap: wrap;
     }
-
-        .contenido-modal{
-        width: 50%;
-    }
-    .contenido-modal-biografia{
-        width: 50%;
-    }
-
     .modal{
     top: +1vh !important;
 }
-}
-.fotoBiografia{
-width: 55%;
-}
+
 .texto-justificado{
 font-size: 16px;
 }
-}
-
-.fullscreen-modal .modal-dialog {
-  margin: 0;
-  margin-right: auto;
-  margin-left: auto;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .fullscreen-modal .modal-dialog {
-    width: 40px;
-  }
-}
-@media (min-width: 992px) {
-  .fullscreen-modal .modal-dialog {
-    width: 40px;
-  }
-}
-@media (min-width: 1200px) {
-  .fullscreen-modal .modal-dialog {
-     width: 40px;
-  }
-}
-
-
-#contenedor-frase1{
-background-color:#f2e5dd;
-padding-top:80px; 
-padding-bottom:20px !important; 
 }
 
 .close:hover { background: #00d9ff !important; }
@@ -638,3 +496,19 @@ padding-bottom:20px !important;
 .carousel-control-next-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
+
+*{
+  animation-duration:0.5s;
+  animation-name:probando;
+}
+
+@keyframes probando {
+   from {
+opacity: 0;
+}
+
+  to {
+opacity:1;
+  }
+}
+

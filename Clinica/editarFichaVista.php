@@ -35,15 +35,16 @@ th, td {
  
     	<label>Diagnostico</label>
      <input type="text" name="diagnostico"  class="form-control" value="<?php echo $_POST['diagnostico']; ?>" required/> 
-
+<br />  
       <label>Tratamiento 1</label>
            <input type="text" name="tratamiento1"  class="form-control" value="<?php echo $_POST['tratamiento1']; ?>" required/>
- 
+ <br />  
+     <label>Tratamiento 2</label>
+     <input type="text" name="tratamiento2" class="form-control" value="<?php echo $_POST['tratamiento2']; ?>" required/>
+     <br />  
   <label>Examenes</label>
      <input type="text" name="examenes" class="form-control" value="<?php echo $_POST['examenes']; ?>" required/>
 
-     <label>Tratamiento 2</label>
-     <input type="text" name="tratamiento2" class="form-control" value="<?php echo $_POST['tratamiento2']; ?>" required/>
 
 
      <br />  

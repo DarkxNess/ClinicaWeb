@@ -4,13 +4,13 @@
   <title>Hospital Nexo</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/carousel.css">
-
     <link rel="stylesheet" href="css/MyStyles.css">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+
 
 </head>
 <body width="100%">
@@ -54,13 +54,13 @@ if ($_SESSION['privilegio']=="doctor" || $_SESSION['privilegio']=="admin"){
   <?php
 if(isset($_SESSION['user'])){
 ?>
-<a style="float:right;" href="#"> Bienvenido: <?php echo $_SESSION['user']; ?> &nbsp; <?php echo $_SESSION['apellido']; ?>  </a>
+<a class="sesionTopBar" style="float:right;" href="#"> Bienvenido: <?php echo $_SESSION['user']; ?> &nbsp; <?php echo $_SESSION['apellido']; ?>  </a>
 <?php  } ?>
 
  <?php
 if(isset($_SESSION['user'])){
 ?>
- <a style="float:right;" href="logout.php">Logout</a>
+ <a  class="sesionTopBar" href="logout.php">Logout</a>
 <?php  } ?> 
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
@@ -69,7 +69,7 @@ if(isset($_SESSION['user'])){
 
 
 
-<div id="bannerCarousel" data-ride="carousel" class="carousel slide">
+<div id="bannerCarousel" data-ride="carousel" style="padding-top:3rem;" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active">
  <img src="banner.jpg" alt="banner" width="100%" height="150px" class="">
