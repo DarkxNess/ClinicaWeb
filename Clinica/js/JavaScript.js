@@ -1,6 +1,9 @@
 ﻿jQuery(document).ready(function($) {
     $('#listarUsuarios').DataTable();
 });
+jQuery(document).ready(function($) {
+    $('#listarNoticias').DataTable();
+});
 
 jQuery(document).ready(function($) {
     $('#pacientes').DataTable();

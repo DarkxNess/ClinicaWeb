@@ -3,9 +3,9 @@
 <div class="divCentro">
 
 
-       
-         
- 
+
+
+
 <form action="modal_login.php" class="formularioPersonalizado" style="background: #C0C0C0;" method="POST">
   <div class="form-group">
      <h3 align="center">Login</h3>

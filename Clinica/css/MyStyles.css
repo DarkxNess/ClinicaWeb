@@ -43,14 +43,14 @@ h5{
 .sesionTopBar{
 float:right;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 780px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 780px) {
   .topnav.responsive {position: fixed;}
   .topnav.responsive .icon {
   position:fixed;
@@ -267,12 +267,12 @@ display: none;
     height:270px;
     margin-bottom:5px;
      flex-wrap: wrap;
-   
+
 }
 
 .imagen img{
     width: 80%;
-    height:80%; 
+    height:80%;
      margin-left: auto;
     margin-right: auto;
     display: block;
@@ -361,7 +361,7 @@ font-size: 26px;
 .texto-justificado{
 font-size: 20px;
 }
-        
+
 }
 
 @media screen and (max-width:1000px){
@@ -377,7 +377,7 @@ font-size: 20px;
     .modal{
     top: -4vh !important;
 }
-        
+
 }
 
 /* media que regula el contenedor para 2 imagenes */
@@ -394,7 +394,7 @@ font-size: 20px;
     .modal{
     top: +1vh !important;
 }
-        
+
 }
 /* media que regula el contenedor para 1 imagenes */
 
@@ -496,19 +496,3 @@ font-size: 16px;
 .carousel-control-next-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
-
-*{
-  animation-duration:0.5s;
-  animation-name:probando;
-}
-
-@keyframes probando {
-   from {
-opacity: 0;
-}
-
-  to {
-opacity:1;
-  }
-}
-

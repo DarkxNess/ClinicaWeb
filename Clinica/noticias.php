@@ -19,8 +19,8 @@ session_start();
 
 
 </td></tr></tbody></table>
-    <div class="table-responsive ">
-       <table  id="grid" class="table table-bordered">
+    <div class="table-responsive">
+       <table  id="listarNoticias" class="table table-bordered">
     <thead>
       <tr>
         <th>#</th>
